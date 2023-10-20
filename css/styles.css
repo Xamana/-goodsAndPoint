@@ -56,6 +56,7 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 
@@ -278,10 +279,12 @@ input {
 .goods-controlPanel {
     display: flex;
     justify-content: space-between;
+    align-items: end;
     width: 100%;
     height: 100%;
     padding-bottom: 16px;
     border-bottom: 1px solid var(--underline-color);
+    margin-bottom: 10px;
 }
 .goods-customChecbox {
     
@@ -445,8 +448,11 @@ input {
     padding-right: 15px;
 }
 .product-count > div:not(:last-child) {
-    margin-bottom: 8px;
+
     display: flex;
+}
+.product-count {
+    margin-bottom: 8px;
 }
 .count__counter {
     display: flex;
@@ -469,6 +475,7 @@ input {
     border:none;
     color: var(var(--dark-color));
     font-size: 18px;
+    border-radius: 4px;
 
 }
 .counter__value {
@@ -657,8 +664,7 @@ input {
     font-style: normal;
     font-weight: 400;
     line-height: 16px;
-    margin-bottom: 2px;
-    margin-bottom: 4px;
+    margin-top: 4px;
 }
 .delivery-info__text {
     font-family: 'Segoe UI';
@@ -712,7 +718,7 @@ input {
     
 }
 .delivery-container__block:not(:last-child) {
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 .delivery-info__date__goods {
     display: flex;
@@ -742,11 +748,13 @@ input {
 }
 
 .delivery-info__help__img {
+    flex: 0 0 auto;
     margin-right: 8px;
     width: 22px;
     height: 22px;
     background-image: url('../assets/icon/greencheck.svg'); 
     display: inline-block;
+    word-wrap: break-word;
 }
 .delivery-info__help__text {
     font-family: "Segoe UI";
@@ -754,12 +762,12 @@ input {
     font-style: normal;
     font-weight: 400;
     line-height: 16px;
-    word-break:break-all;
 }
 .delivery-info__help__link {
     color: #0CB477;
     display: inline-block;
-    border-bottom: 1px dashed #0CB477;
+    text-underline-offset: 2px;
+    text-decoration: underline dashed #0CB477;
 }
 .payment {
     margin-bottom: 16px;
@@ -831,7 +839,7 @@ input {
     grid-template-areas: 
         'n n n s s s'
         'm m p p i i';
-    gap: 17px 16px;
+    gap: 22px 24px;
 }
 .recipient-info__name {
     grid-area: n;
@@ -910,7 +918,7 @@ input {
 }
 .resaults-container {
     width: 305px;
-    padding: 13px 25px 30px 25px;
+    padding: 14px 25px 26px 25px;
     display: flex;
     flex-direction: column;
     background-color: var(--white-color);
@@ -1105,6 +1113,7 @@ input {
     gap: 8px; 
 }
 .resaults-order__rulsCheck__checkbox {
+    flex: 0 0 auto;
     background-image: url('../assets/icon/check.svg');
     height: 24px;
     width: 13px;
@@ -1225,6 +1234,7 @@ input {
 @media screen and (max-width: 700px) {
     .cart {
         margin-right: 0px;
+        margin-bottom: 16px;
     }
     .product-size__mobile {
         display: block;
@@ -1349,6 +1359,7 @@ input {
     .product-count {
         grid-area: counter;
         display: flex;
+        align-items: center;
     }
     .product-size__mobile {
         display: flex;
@@ -1393,19 +1404,23 @@ input {
         max-height: 40px;
     }
     .count__counter {
+        display: block;
         width: 80px;
         height: 32px;
         margin-right: 16px;
         border-radius: 4px;
-        overflow: hidden;
     }
     .product-count {
         width: 288px;
-        margin-top: 10px;
+        margin-top: 12px;
         padding-right: 0px;
-        position: relative;;
+        margin-bottom: 16px;
+    }
+    .count__balance {
+        margin-bottom: 0;
     }
     .counter__button {
+        display: block;
         width: 24px;
         height: 32px;
     }
@@ -1413,15 +1428,19 @@ input {
         font-size: 14px;
     }
     .count__balance {
-        margin-top: 10px;
         margin-left: 0px;
-        width: inherit;
         margin-right: 0;
-        position: absolute;
-        left: 96px;
+        font-family: Segoe UI;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 16px;
+    }
+    .cart-activeGoods {
+        margin-bottom: 32px;
     }
     .count__controls {
-        margin-top: 8px;
+        height: 24px;
         display: flex;
         justify-content: space-between;
     }
@@ -1440,9 +1459,11 @@ input {
     .cart-goods__active {
         margin-top: 12px;
     }
+    .delivery-container__block:not(:last-child) {
+        margin-bottom: 16px;
+    }
     .cart-goods__active:not(:last-child) {
         border-bottom: 1px solid rgba(0, 0, 0, 0.10);
-        padding-bottom: 9px;
         margin-bottom: 0px;
     }
     .controls__icon {
@@ -1451,8 +1472,14 @@ input {
         justify-content: center;
 
     }
+    .cart-noneGoods__info__title__text {
+        margin-top: -3px;
+        /* странное решение дизайнера но в верстке видно что текст вышел за блок */
+        height: 24px;
+    }
     .closedArow {
         margin-right: 4px;
+        height: 24px;
     }
     .cart-noneGoods__info__title  {
         padding-bottom: 14px;
@@ -1463,12 +1490,12 @@ input {
 
     }
     .cart-noneGoods__product:not(:last-child) {
-        margin-bottom: -2px;
+        margin-bottom: 0px;
         border-bottom: 1px solid rgba(0, 0, 0, 0.10);
-        padding-bottom: 16px;
+
     }
     .cart-noneGoods {
-        margin-bottom: 32px;
+        margin-bottom: 16px;
     }
   
     .block-header {
@@ -1546,7 +1573,7 @@ input {
         display: flex;
         padding: 0 8px;
         width: 100%;
-        height: 32px;
+        min-height: 32px;
         
     }
     .delivery-info__help__text {
@@ -1568,11 +1595,20 @@ input {
     .delivery-info__box {
         margin-bottom: 28px;
     }
+    .cart-title {
+        line-height: 28px;
+    }
     .cart-title, .cart-activeGoods, .block-container, .cart-noneGoods  {
         padding: 0 16px;
     }
+    .customCheckbox {
+        align-items: end;
+    }
     .cart-container {
-        padding-top: 10px;
+        padding-top: 15px;
+    }
+    .checkBox-description {
+        line-height: 24px;
     }
     .block-container {
         padding-top: 16px;
@@ -1593,13 +1629,13 @@ input {
     .recipient-info {
         height: 100%;
         gap: 16px;
-        padding-bottom: 24px;
-        margin-bottom: 16px;
+        padding-bottom: 22px;
     }
     .recipient-info > div {
         height: 56px;
     }
     .recipient-text {
+
         line-height: 13px;
     }
     .recipient-info__inn__description {
@@ -1611,5 +1647,110 @@ input {
     }
     .resaults-container {
         width: 100%;
+        padding: 8px 16px 24px 16px;
+        background-color: inherit;
+        box-shadow: none;
+    }
+    .total-title {
+        font-family: Segoe UI;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 28px;
+        letter-spacing: -0.2px
+    }
+    .total-title__sum__count {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .total-calculations__goods__text {
+        font-family: Segoe UI;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    .resaults-delivery-info__help {
+        padding: 10px 8px 10px 8px;
+        background-color: #F0ECF4;
+
+    }
+    .resaults-container > div:not(:last-child) {
+        margin-bottom: 16px;
+    }
+    .resaults-order {
+        margin-top: 8px;
+    }
+    .resaults-order__rulsCheck__text{
+        width: 100%;
+    }
+    .resaults-order {
+        margin-bottom: 16px;
+        gap: 12px
+    }
+    .goods-controlPanel {
+        padding-bottom: 18px;
+        margin-bottom: 0;
+    }
+    .navbar-mobil {
+        width: 100%;
+        height: 56px;
+        display: flex;
+        background-color: #fff;
+        z-index: 100;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        vertical-align: baseline; 
+        z-index: 100;
+    }
+    .navbar-mobile__link {
+        padding: 12px 0;
+        background-color: #fff;
+        flex-grow: 1;
+        display: block;
+
+    }
+    .navbar-mobile__icon {
+        width: 28px;
+        height: 28px;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+    }
+    .navbar-mobile__icon--home {
+        background-image: url(/assets/icon/tabbar-mobile/main.svg);
+    }
+    .navbar-mobile__icon--catalog {
+        background-image: url(/assets/icon/tabbar-mobile/catalog.svg);
+    }
+    .navbar-mobile__icon--cart {
+        background-image: url(/assets/icon/tabbar-mobile/cart.svg);
+    }
+    .navbar-mobile__icon--favorite {
+        background-image: url(/assets/icon/tabbar-mobile/favorites.svg);
+    }
+    .navbar-mobile__icon--profile {
+        background-image: url(/assets/icon/tabbar-mobile/profile.svg);
+    }
+    .navbar-mobile__notify {
+        text-align: center;
+        font-family: Segoe UI;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 18px;
+        color: #fff;
+
+        position: absolute;
+        background-color: var(--notification-color);
+        top: -6px;
+        right: -6px;
+        padding: 0px 6px;
+        border-radius: 16px;
+ 
+    }
+    .footer {
+        padding-bottom: 56px;
     }
 }
