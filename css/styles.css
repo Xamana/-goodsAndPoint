@@ -148,10 +148,15 @@ input {
     flex: 1 1 auto;
     background-color: inherit;
     border: none;
-    margin-right: 8px;
+    padding-right: 8px;
     padding: 13px 52px 17px 20px;
     border: none;
     font-size: 18px;
+    transition: .3s ease 0s;
+}
+.search-input:hover {
+    background-color: var(--white-color);
+    opacity: 0.4;
 }
 .search:focus, .search-input:focus {
     background-color: var(--white-color);
@@ -402,6 +407,9 @@ input {
     margin-bottom: 8px;
     width: 100%;
     letter-spacing: normal;
+}
+.description__text:hover {
+    cursor: pointer;
 }
 .description__options{
     display: flex;
@@ -695,6 +703,9 @@ input {
     font-weight: 700;
     line-height: 38px;
     letter-spacing: 0.5px;
+}
+.changeInfo__button:hover {
+    cursor: pointer;
 }
 
 .delivery-info__title {
