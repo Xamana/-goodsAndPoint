@@ -1732,19 +1732,19 @@ input {
         margin: 0 auto;
     }
     .navbar-mobile__icon--home {
-        background-image: url(/assets/icon/tabbar-mobile/main.svg);
+        background-image: url("../assets/icon/tabbar-mobile/main.svg");
     }
     .navbar-mobile__icon--catalog {
-        background-image: url(/assets/icon/tabbar-mobile/catalog.svg);
+        background-image: url("../assets/icon/tabbar-mobile/catalog.svg");
     }
     .navbar-mobile__icon--cart {
-        background-image: url(/assets/icon/tabbar-mobile/cart.svg);
+        background-image: url("../assets/icon/tabbar-mobile/cart.svg");
     }
     .navbar-mobile__icon--favorite {
-        background-image: url(/assets/icon/tabbar-mobile/favorites.svg);
+        background-image: url("../assets/icon/tabbar-mobile/favorites.svg");
     }
     .navbar-mobile__icon--profile {
-        background-image: url(/assets/icon/tabbar-mobile/profile.svg);
+        background-image: url("../assets/icon/tabbar-mobile/profile.svg");
     }
     .navbar-mobile__notify {
         text-align: center;
